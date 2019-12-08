@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <script data-require="jquery@3.0.0" data-semver="3.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
+    <link rel="stylesheet" href="https://www.w3.org/TR/2017/CR-css-grid-1-20171214/" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="overlay">
+      
+    </div>
+    
+    <div id="container">
+      <h1 id="main_title">SELF CHECK-OUT MACHINE</h1>
+      
+      <div class="column" id="column1">
+        <h3 id="title1">Transaction</h3>
+        <img id="img" src="./images/machine.gif" alt="self check-out machine" width="100%" />
+        <form id="priceCashForm" action="" method="get" accept-charset="utf-8">
+          <div class="form-field">
+            <label for="price">PRICE</label>
+            <input onkeyup="onInputChange()" onchange="onInputChange()" type="number" name="priceInput" id="priceInput"
+              value="0.00" autocomplete="off" step="0.01" />
+          </div>
+          <div class="form-field">
+            <label for="cash">CASH</label>
+            <input onkeyup="onInputChange()" onchange="onInputChange()" type="number" name="cashInput" id="cashInput"
+              value="0.00" autocomplete="off" step="0.01" />
+          </div>
+        </form>
+
+        <div id="buttons">
+          <button id="clearBtn" class="btn" type="submit">Clear Fields</button>
+          <button id="randomizeBtn" class="btn" type="submit">Randomize It</button>
+        </div>
+      </div> <!-- End of column 1 -->
+
+      <div class="column" id="column2">
+        <h3 id="title2">Cash In Drawer</h3>
+        <form id="cidForm" action="" method="get" accept-charset="utf-8">
+          <div class="form-field">
+            <label for="fifty">FIFTY</label>
+            <input onkeyup="onInputChange()" onchange="onInputChange()" type="number" name="fiftyCidInput" id="fiftyCidInput"
+              value="0" autocomplete="off" step="50" />
+          </div>
+          <div class="form-field">
+            <label for="twinty">TWINTY</label>
+            <input onkeyup="onInputChange()" onchange="onInputChange()" type="number" name="twintyCidInput" id="twintyCidInput"
+              value="0" autocomplete="off" step="20" />
+          </div>
+          <div class="form-field">
+            <label for="ten">TEN</label>
+            <input onkeyup="onInputChange()" onchange="onInputChange()" type="number" name="tenCidInput" id="tenCidInput"
+              value="0" autocomplete="off" step="10" />
+          </div>
+          <div class="form-field">
+            <label for="five">FIVE</label>
+            <input onkeyup="onInputChange()" onchange="onInputChange()" type="number" name="fiveCidInput" id="fiveCidInput"
+              value="0" autocomplete="off" step="5" />
+          </div>
+          <div class="form-field">
+            <label for="two">TWO</label>
+            <input onkeyup="onInputChange()" onchange="onInputChange()" type="number" name="twoCidInput" id="twoCidInput"
+              value="0" autocomplete="off" step="2" />
+          </div>
+          <div class="form-field">
+            <label for="one">ONE</label>
+            <input onkeyup="onInputChange()" onchange="onInputChange()" type="number" name="oneCidInput" id="oneCidInput"
+              value="0" autocomplete="off" step="1" />
+          </div>
+          <div class="form-field">
+            <label for="half">HALF</label>
+            <input onkeyup="onInputChange()" onchange="onInputChange()" type="number" name="halfCidInput" id="halfCidInput"
+              value="0.00" autocomplete="off" step="0.50" />
+          </div>
+          <div class="form-field">
+            <label for="quarter">QUARTER</label>
+            <input onkeyup="onInputChange()" onchange="onInputChange()" type="number" name="quarterCidInput"
+              id="quarterCidInput" value="0.00" autocomplete="off" step="0.25" />
+          </div>
+          <div class="form-field">
+            <label for="dime">DIME</label>
+            <input onkeyup="onInputChange()" onchange="onInputChange()" type="number" name="dimeCidInput" id="dimeCidInput"
+              value="0.00" autocomplete="off" step="0.10" />
+          </div>
+          <div class="form-field">
+            <label for="nickel">NICKEL</label>
+            <input onkeyup="onInputChange()" onchange="onInputChange()" type="number" name="nickelCidInput" id="nickelCidInput"
+              value="0.00" autocomplete="off" step="0.05" />
+          </div>
+          <div class="form-field">
+            <label for="2penny">TWO PENNY</label>
+            <input onkeyup="onInputChange()" onchange="onInputChange()" type="number" name="2pennyCidInput"
+              id="twoPennyCidInput" value="0.00" autocomplete="off" step="0.01" />
+          </div>
+          <div class="form-field">
+            <label for="penny">PENNY</label>
+            <input onkeyup="onInputChange()" onchange="onInputChange()" type="number" name="pennyCidInput" id="pennyCidInput"
+              value="0.00" autocomplete="off" step="0.01" />
+          </div>
+        </form>
+
+      </div> <!-- End of column 2 -->
+
+      <div class="column" id="column3">
+        <h3 id="title3">Result</h3> 
+
+        <table id="result" border="1">
+          <tbody>
+            <tr>
+              <th>Units</th>
+              <th> Cash Before </th>
+              <th> Change Due </th>
+              <th> Cash After </th>
+            </tr>
+            <tr>
+              <td id="curr">
+                FIFTY
+                <hr />
+        
+                TWENTY
+                <hr />
+        
+                TEN
+                <hr />
+        
+                FIVE
+                <hr />
+        
+                TWO
+                <hr />
+        
+                ONE
+                <hr />
+        
+                HALF
+                <hr />
+        
+                QUARTER
+                <hr />
+        
+                DIME
+                <hr />
+        
+                NICKEL
+                <hr />
+        
+                TWO PENNY
+                <hr />
+        
+                PENNY
+                <hr />
+              </td>
+              <td id="cid_before"></td>
+              <td id="change_due"></td>
+              <td id="cid_after"></td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div> <!-- End of column 3 -->
+      
+      
+      
+      
+
+      
+      
+      
+      
+      
+     
+    </div>
+    <!-- end of container -->
+    <script src="script.js"></script>
+  </body>
+
+</html>
